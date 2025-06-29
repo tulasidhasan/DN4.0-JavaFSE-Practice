@@ -1,0 +1,5 @@
+com\example\ApiServiceTest.class
+com\example\ServiceTest.class
+com\example\NetworkServiceTest.class
+com\example\FileServiceTest.class
+com\example\MultiReturnServiceTest.class

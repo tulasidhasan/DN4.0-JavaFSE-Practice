@@ -1,0 +1,9 @@
+com\example\NetworkService.class
+com\example\NetworkClient.class
+com\example\FileWriter.class
+com\example\ApiService.class
+com\example\RestClient.class
+com\example\FileService.class
+com\example\FileReader.class
+com\example\Repository.class
+com\example\Service.class

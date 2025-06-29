@@ -1,0 +1,8 @@
+com\example\demo\UserIntegrationTest.class
+com\example\demo\GlobalExceptionHandler.class
+com\example\demo\repository\UserRepositoryTest.class
+com\example\demo\service\CalculatorServiceTest.class
+com\example\demo\controller\UserControllerTest.class
+com\example\demo\UserExceptionHandlingTest.class
+com\example\demo\CalculatorServiceParameterizedTest.class
+com\example\demo\service\UserServiceTest.class

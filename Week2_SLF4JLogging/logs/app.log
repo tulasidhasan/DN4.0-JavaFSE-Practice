@@ -1,0 +1,8 @@
+2025-06-29 22:37:28 ERROR com.example.logging.LoggingExample - This is an error message
+2025-06-29 22:37:28 WARN  com.example.logging.LoggingExample - This is a warning message
+2025-06-29 22:37:32 INFO  c.e.l.ParameterizedLoggingExample - User tulasi has logged in with ID 101
+2025-06-29 22:37:32 WARN  c.e.l.ParameterizedLoggingExample - User tulasi attempted access to a restricted page
+2025-06-29 22:37:32 ERROR c.e.l.ParameterizedLoggingExample - Error occurred for user tulasi with ID 101
+2025-06-29 22:37:35 INFO  com.example.logging.AppenderExample - Logging to console and file using SLF4J + Logback
+2025-06-29 22:37:35 WARN  com.example.logging.AppenderExample - This is a warning log
+2025-06-29 22:37:35 ERROR com.example.logging.AppenderExample - This is an error log

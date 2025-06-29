@@ -38,3 +38,14 @@ COMMIT;
 
 CREATE SEQUENCE Transactions_seq START WITH 3 INCREMENT BY 1;
 
+-- ✅ Valid deposit
+INSERT INTO Transactions (TransactionID, AccountID, TransactionDate, Amount, TransactionType)
+VALUES (Transactions_seq.NEXTVAL, 1, SYSDATE, 100, 'Deposit');
+
+-- ❌ Invalid deposit (negative)
+INSERT INTO Transactions (TransactionID, AccountID, TransactionDate, Amount, TransactionType)
+VALUES (Transactions_seq.NEXTVAL, 1, SYSDATE, -50, 'Deposit');
+
+-- ❌ Withdrawal exceeding balance
+INSERT INTO Transactions (TransactionID, AccountID, TransactionDate, Amount, TransactionType)
+VALUES (Transactions_seq.NEXTVAL, 1, SYSDATE, 99999, 'Withdrawal');

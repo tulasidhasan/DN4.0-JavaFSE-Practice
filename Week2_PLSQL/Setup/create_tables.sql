@@ -47,3 +47,12 @@ CREATE TABLE Employees (
     Department VARCHAR2(50),
     HireDate DATE
 );
+
+CREATE TABLE AuditLog (
+    LogID NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    AccountID NUMBER,
+    TransactionDate DATE,
+    Amount NUMBER,
+    TransactionType VARCHAR2(10),
+    LoggedAt DATE DEFAULT SYSDATE
+);

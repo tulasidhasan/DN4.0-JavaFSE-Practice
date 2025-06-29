@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.example.PerformanceTesterTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.234 s <<< FAILURE! - in com.example.PerformanceTesterTest
+com.example.PerformanceTesterTest.testLongRunningTaskFailsTimeout  Time elapsed: 1.011 s  <<< ERROR!
+java.util.concurrent.TimeoutException: testLongRunningTaskFailsTimeout() timed out after 1 second
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.repository.UserRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.446 s <<< FAILURE! -- in com.example.demo.repository.UserRepositoryTest
-com.example.demo.repository.UserRepositoryTest.testFindByName -- Time elapsed: 0.055 s <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.559 s <<< FAILURE! -- in com.example.demo.repository.UserRepositoryTest
+com.example.demo.repository.UserRepositoryTest.testFindByName -- Time elapsed: 1.067 s <<< ERROR!
 org.springframework.orm.jpa.JpaSystemException: Identifier of entity 'com.example.demo.entity.User' must be manually assigned before calling 'persist()'
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:341)
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
@@ -16,8 +16,8 @@ org.springframework.orm.jpa.JpaSystemException: Identifier of entity 'com.exampl
 	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
-	at jdk.proxy2/jdk.proxy2.$Proxy160.save(Unknown Source)
-	at com.example.demo.repository.UserRepositoryTest.testFindByName(UserRepositoryTest.java:25)
+	at jdk.proxy2/jdk.proxy2.$Proxy108.save(Unknown Source)
+	at com.example.demo.repository.UserRepositoryTest.testFindByName(UserRepositoryTest.java:23)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
@@ -34,7 +34,7 @@ Caused by: org.hibernate.id.IdentifierGenerationException: Identifier of entity 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319)
-	at jdk.proxy2/jdk.proxy2.$Proxy155.persist(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy100.persist(Unknown Source)
 	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:618)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)

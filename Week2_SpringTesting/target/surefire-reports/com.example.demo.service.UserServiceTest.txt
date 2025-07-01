@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.service.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.329 s <<< FAILURE! -- in com.example.demo.service.UserServiceTest
-com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound -- Time elapsed: 0.320 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.680 s <<< FAILURE! -- in com.example.demo.service.UserServiceTest
+com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound -- Time elapsed: 0.666 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.util.NoSuchElementException to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)

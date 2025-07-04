@@ -10,7 +10,7 @@ import com.example.demo.util.MathUtil;
 public class MathUtilTest {
 
     @ParameterizedTest
-    @ValueSource(ints = {2, 4, 6, 8, 10})
+    @ValueSource(ints = {2, 4, 6, 8, 12})
     public void testIsEven_ShouldReturnTrue(int number) {
         assertTrue(MathUtil.isEven(number));
     }

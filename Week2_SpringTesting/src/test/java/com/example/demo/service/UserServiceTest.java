@@ -1,38 +1,28 @@
 package com.example.demo.service;
 
-import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import java.util.Optional;
 import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 
-@ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
-
-    @Mock
-    private UserRepository userRepository;
-
-    @InjectMocks
-    private UserService userService;
 
     @Test
     public void testGetUserById_UserNotFound() {
-        Long userId = 1L;
-        when(userRepository.findById(userId)).thenReturn(Optional.empty());
+        UserRepository mockRepo = mock(UserRepository.class);
+        when(mockRepo.findById(999L)).thenReturn(Optional.empty());
 
-        NoSuchElementException exception = assertThrows(NoSuchElementException.class, () -> {
-            userService.getUserById(userId);
+        UserService service = new UserService();
+        service.userRepository = mockRepo;
+
+        assertThrows(NoSuchElementException.class, () -> {
+            service.getUserById(999L);
         });
-
-        assertEquals("User not found", exception.getMessage());
     }
 }

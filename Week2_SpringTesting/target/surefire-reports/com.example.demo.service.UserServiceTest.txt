@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: com.example.demo.service.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.680 s <<< FAILURE! -- in com.example.demo.service.UserServiceTest
-com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound -- Time elapsed: 0.666 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.310 s <<< FAILURE! -- in com.example.demo.service.UserServiceTest
+com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound -- Time elapsed: 0.307 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: Expected java.util.NoSuchElementException to be thrown, but nothing was thrown.
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
-	at com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound(UserServiceTest.java:32)
+	at com.example.demo.service.UserServiceTest.testGetUserById_UserNotFound(UserServiceTest.java:24)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)

@@ -1,15 +1,15 @@
 package com.example.demo;
 
-import com.example.demo.entity.User;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
-
-import org.junit.jupiter.api.Test;
-import java.util.Optional;
-import java.util.NoSuchElementException;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
 

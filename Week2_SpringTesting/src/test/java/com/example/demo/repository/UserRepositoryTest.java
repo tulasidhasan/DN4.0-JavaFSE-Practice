@@ -3,6 +3,7 @@ package com.example.demo.repository;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,26 +18,20 @@ public class UserRepositoryTest {
 
     @Test
     public void testFindByName() {
-        // Arrange: Save some users
-        User user1 = new User();
-        user1.setName("Alice");
+        // Setup
+        User user1 = new User(1L, "Alice");
+        User user2 = new User(2L, "Bob");
+        User user3 = new User(3L, "Alice");
+
         userRepository.save(user1);
-
-        User user2 = new User();
-        user2.setName("Bob");
         userRepository.save(user2);
-
-        User user3 = new User();
-        user3.setName("Alice");
         userRepository.save(user3);
 
         // Act
-        List<User> usersNamedAlice = userRepository.findByName("Alice");
+        List<User> results = userRepository.findByName("Alice");
 
         // Assert
-        assertEquals(2, usersNamedAlice.size());
-        for (User user : usersNamedAlice) {
-            assertEquals("Alice", user.getName());
-        }
+        assertEquals(2, results.size());
+        assertTrue(results.stream().allMatch(u -> u.getName().equals("Alice")));
     }
 }

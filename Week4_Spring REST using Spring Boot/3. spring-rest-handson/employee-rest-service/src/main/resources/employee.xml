@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/p http://www.springframework.org/schema/p/spring-p.xsd">
+
+    <!-- Departments -->
+    <bean id="dept1" class="com.example.ems.model.Department" p:id="1" p:name="HR"/>
+    <bean id="dept2" class="com.example.ems.model.Department" p:id="2" p:name="IT"/>
+
+    <!-- Skills -->
+    <bean id="skill1" class="com.example.ems.model.Skill" p:id="1" p:name="Java"/>
+    <bean id="skill2" class="com.example.ems.model.Skill" p:id="2" p:name="Spring"/>
+
+    <util:list id="skillList" value-type="com.example.ems.model.Skill">
+        <ref bean="skill1"/>
+        <ref bean="skill2"/>
+    </util:list>
+
+    <!-- Employees -->
+    <bean id="emp1" class="com.example.ems.model.Employee" p:id="1" p:name="Alice" p:department-ref="dept1" p:skills-ref="skillList"/>
+    <bean id="emp2" class="com.example.ems.model.Employee" p:id="2" p:name="Bob" p:department-ref="dept2" p:skills-ref="skillList"/>
+    <bean id="emp3" class="com.example.ems.model.Employee" p:id="3" p:name="Charlie" p:department-ref="dept1" p:skills-ref="skillList"/>
+    <bean id="emp4" class="com.example.ems.model.Employee" p:id="4" p:name="Diana" p:department-ref="dept2" p:skills-ref="skillList"/>
+
+    <util:list id="employeeList" value-type="com.example.ems.model.Employee">
+        <ref bean="emp1"/>
+        <ref bean="emp2"/>
+        <ref bean="emp3"/>
+        <ref bean="emp4"/>
+    </util:list>
+
+    <util:list id="departmentList" value-type="com.example.ems.model.Department">
+        <ref bean="dept1"/>
+        <ref bean="dept2"/>
+    </util:list>
+
+</beans>

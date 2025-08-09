@@ -1,0 +1,47 @@
+
+# -----------------------------
+# Branching & Merging Hands-On Lab
+# -----------------------------
+
+# 1. Create a New Branch
+git branch GitNewBranch
+
+# 2. List Local and Remote Branches
+git branch -a
+
+# 3. Switch to New Branch
+git checkout GitNewBranch
+
+# 4. Add a New File in Branch
+echo "This is a file in GitNewBranch" > branchfile.txt
+
+# 5. Stage and Commit in Branch
+git add branchfile.txt
+git commit -m "Added branchfile.txt in GitNewBranch"
+
+# 6. Check Status
+git status
+
+# 7. Switch Back to Main/Master
+git checkout main  # or 'master' if main branch is named master
+
+# 8. Show Differences in CLI
+git diff main GitNewBranch
+
+# 9. Show Differences in P4Merge (if configured)
+git difftool main GitNewBranch
+
+# 10. Merge Branch into Main
+git merge GitNewBranch
+
+# 11. View Merge History
+git log --oneline --graph --decorate
+
+# 12. Delete Merged Branch
+git branch -d GitNewBranch
+
+# 13. Verify Status
+git status
+
+# 14. Push Branch to Remote (for Merge Request in GitLab)
+git push origin GitNewBranch

@@ -1,0 +1,109 @@
+Git Merge Conflict Resolution - Step-by-Step (Lab: Git-T03-HOL_001)
+
+Setup (create a safe playground)
+--------------------------------
+mkdir GitMergeLab
+cd GitMergeLab
+git init
+echo "# Git Merge Lab" > README.md
+git add README.md
+git commit -m "Initial commit"
+git rev-parse --abbrev-ref HEAD
+git branch -m main master   # only if default is main
+
+1. Verify master is clean
+-------------------------
+git checkout master
+git status --porcelain
+
+2. Create branch GitWork & add hello.xml
+----------------------------------------
+git checkout -b GitWork
+cat > hello.xml <<'EOF'
+<note>
+  <to>User</to>
+  <from>Branch</from>
+  <body>Hello from GitWork branch</body>
+</note>
+EOF
+git status
+
+3. Update hello.xml
+-------------------
+echo "<!-- branch edit: added timestamp -->" >> hello.xml
+git status
+git diff
+
+4. Commit changes on branch
+---------------------------
+git add hello.xml
+git commit -m "Add hello.xml on GitWork branch"
+
+5. Switch to master
+-------------------
+git checkout master
+
+6. Add hello.xml with different content
+---------------------------------------
+cat > hello.xml <<'EOF'
+<note>
+  <to>Maintainer</to>
+  <from>Master</from>
+  <body>Hello from master branch</body>
+</note>
+EOF
+
+7. Commit changes on master
+---------------------------
+git add hello.xml
+git commit -m "Add hello.xml on master with different content"
+
+8. View log graph
+-----------------
+git log --oneline --graph --decorate --all
+
+9. Check differences
+--------------------
+git diff master..GitWork -- hello.xml
+
+
+10. Merge branch into master (expect conflict)
+----------------------------------------------
+git checkout master
+git merge GitWork
+
+11. View conflict markers
+-------------------------
+git status
+cat hello.xml
+
+12. Resolve conflict (3-way merge tool or manual)
+-------------------------------------------------
+git mergetool   # if configured
+# OR manually edit hello.xml
+git add hello.xml
+
+13. Commit merge result
+-----------------------
+git commit -m "Merge GitWork into master: resolved conflict in hello.xml"
+
+14. Add backup files to .gitignore
+----------------------------------
+echo "*.orig" >> .gitignore
+
+15. Commit .gitignore
+---------------------
+git add .gitignore
+git commit -m "Ignore mergetool backup files"
+
+16. List branches
+-----------------
+git branch -a
+
+17. Delete merged branch
+------------------------
+git branch -d GitWork
+
+18. View final log
+------------------
+git log --oneline --graph --decorate

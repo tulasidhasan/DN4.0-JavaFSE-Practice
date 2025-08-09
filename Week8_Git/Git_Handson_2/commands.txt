@@ -1,0 +1,28 @@
+# -----------------------------
+# Git Ignore Hands-On Lab
+# -----------------------------
+
+# 1. Navigate to Repo
+cd GitDemo
+
+# 2. Create a .log file and log folder
+echo "This is a log file" > error.log
+mkdir log
+echo "Log folder file" > log/sample.txt
+
+# 3. Create/Edit .gitignore file
+notepad++ .gitignore
+
+# Inside .gitignore, add:
+# Ignore all .log files
+*.log
+# Ignore the entire log folder
+log/
+
+# 4. Verify ignored files
+git status
+
+# 5. Commit .gitignore
+git add .gitignore
+git commit -m "Added .gitignore to ignore .log files and log folder"
+git push origin main

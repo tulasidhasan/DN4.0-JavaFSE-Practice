@@ -1,0 +1,41 @@
+
+# Git HOL - All Commands
+
+# 1. Check Git Installation
+git --version
+
+# 2. Configure Git User Information
+git config --global user.name "tulasidhasan"
+git config --global user.email "tulasidhasan57@gmail.com"
+git config --list
+
+# 3. Set Notepad++ as Default Git Editor
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+git config --global -e
+
+# 4. Create Local Repository
+mkdir GitDemo
+cd GitDemo
+git init
+
+# 5. Create and View a File
+echo "Welcome to Git Demo" > welcome.txt
+ls
+cat welcome.txt
+
+# 6. Stage and Commit the File
+git status
+git add welcome.txt
+git commit
+
+# 7. Link Local Repository to Remote
+git remote add origin  https://gitlab.com/dn4.0-cts/GitDemo.git/
+
+# 8. Fix Branch Name Mismatch
+git branch -m master main
+git fetch origin
+git branch --set-upstream-to=origin/main main
+git pull origin main --allow-unrelated-histories
+
+# 9. Push to Remote
+git push origin main
